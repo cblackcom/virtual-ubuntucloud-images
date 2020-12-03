@@ -1,6 +1,10 @@
 #cloud-config
 users:
-  - default
+  - name: virtual
+    # password is 'password'
+    passwd: $6$rounds=4096$p/wwO8kiDXwYBJ1F$g1gwvobPyJVAaW/0N6AeamYHm4P0jVaZ3HDkCeStElOu0gcpbzPZ28W7QThp/p9zkMk8ZARxtvDBEucvD0smG/
     lock_passwd: false
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
 chpassword: { expire: false }
 ssh_pwauth: true
